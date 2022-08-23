@@ -146,7 +146,8 @@ def draw_game_state(screen, gs, valid_moves, selected, move_log):
     draw_pieces(screen, gs.board)
 
 def draw_board(screen):
-    colors = [pygame.Color(186, 186, 186), pygame.Color(122, 122, 122)]
+    colors = [pygame.Color(224, 249, 222), pygame.Color(113, 198, 113)] 
+    #pygame.Color(113, 198, 113), pygame.Color(224, 249, 222)
     for r in range(DIMENSION):
         for c in range(DIMENSION):
             color = colors[((r+c)%2)]
@@ -160,8 +161,8 @@ def draw_pieces(screen, board):
                 screen.blit(IMAGES[piece], pygame.Rect(c*SQUARE_SIZE, r*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
 
 def draw_moves(screen, gs, valid_moves, selected, move_log):
-    color2 = pygame.Color(186, 221, 255)
-    color = pygame.Color(186, 221, 255)
+    color2 = pygame.Color(255,246,143)
+    color = pygame.Color(245,246,143)
 
     if selected != ():
         r, c = selected
@@ -185,7 +186,7 @@ def draw_moves(screen, gs, valid_moves, selected, move_log):
 
 
 def animate(move, screen, board, clock):
-    colors = [pygame.Color(186, 186, 186), pygame.Color(122, 122, 122)]
+    colors = [pygame.Color(224, 249, 222), pygame.Color(113, 198, 113)]
     delta_row = move.end_row - move.start_row
     delta_col = move.end_col - move.start_col
     fps = 4
